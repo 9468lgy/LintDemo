@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LintDemo.iml" filepath="$PROJECT_DIR$/LintDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\android_QiCheRen\LintDemo\lintJar\lint.iml" filepath="D:\android_QiCheRen\LintDemo\lintJar\lint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lintJar/lintJar.iml" filepath="$PROJECT_DIR$/lintJar/lintJar.iml" />
+      <module fileurl="file://D:\android_QiCheRen\LintDemo\lint\lintLib.iml" filepath="D:\android_QiCheRen\LintDemo\lint\lintLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lintaar/lintsdk.iml" filepath="$PROJECT_DIR$/lintaar/lintsdk.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 24
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+// 定义方法lintChecks
+configurations {
+    lintChecks
+}
+// 将得到的JAR包复制到目录build/intermediates/lint/下
+task copyLintJar(type: Copy) {
+    from(configurations.lintChecks) {
+        rename {
+            String fileName ->
+                'lint.jar'
+        }
+    }
+    into 'build/intermediates/lint/'
+}
+// 当项目build到compileLint这一步时执行copyLintJar方法
+project.afterEvaluate {
+    def compileLintTask = project.tasks.find { it.name == 'compileLint' }
+    compileLintTask.dependsOn(copyLintJar)
+}
+
+dependencies {
+    // 链接到lintJar中的lintChecks方法,调用jar方法，并获得jar包
+    lintChecks project(path: ':lintJar', configuration: 'lintChecks')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
