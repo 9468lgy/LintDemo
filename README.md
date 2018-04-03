@@ -1,6 +1,10 @@
 # LintDemo
 自定义lint实践
 
+lintJar  定义具体lint规则用来生成lint.jar
+lintaar  将lintJar生成的规则的lint.jar包打入aar包中
+最后将生成的aar包放入项目中,重启androidStudio后,会根据aar包中的lint.jar进行规则检测
+
 参考文档 
 美团《Android自定义Lint实践》 https://tech.meituan.com/android_custom_lint.html
 
